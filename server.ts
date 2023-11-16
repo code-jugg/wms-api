@@ -11,6 +11,7 @@ import 'dotenv/config';
 const port = process.env.PORT || 8080;
 const app = express();
 app.use(cors({ origin: 'https://wms-cli.vercel.app/', credentials: true }));
+app.options('*', cors());
 app.use(express.json());
 app.use(cookieParser());
 
