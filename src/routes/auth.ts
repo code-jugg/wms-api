@@ -31,7 +31,8 @@ router.post('/login', async (req, res) => {
     res.cookie('token', token, {
       maxAge: 86400000,
       httpOnly: true,
-      sameSite: true,
+      secure: true,
+      sameSite: 'none',
     });
     return res.json({ message: 'ログインしました', user: user[0] });
   } catch (err) {
