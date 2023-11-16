@@ -10,8 +10,7 @@ import find from './src/routes/find';
 import 'dotenv/config';
 const port = process.env.PORT || 8080;
 const app = express();
-app.use(cors({ origin: process.env.CLI_BASEURL, credentials: true }));
-app.options('*', cors());
+app.use(cors({ origin: '*', credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
 
