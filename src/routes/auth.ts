@@ -9,6 +9,7 @@ const prisma = new PrismaClient();
 router.post('/login', async (req, res) => {
   try {
     const { id, email, password } = req.body;
+    console.log('deploy test');
     const user = await prisma.user.findMany({
       where: {
         OR: [{ id }, { email }],
