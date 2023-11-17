@@ -20,7 +20,7 @@ model Product {
   JAN BigInt
   code String @db.Char(5)
   branch String @db.Char(4)
-  name String @db.VarChar(15)
+  name String @db.VarChar(255)
   MFD DateTime
   BBE DateTime
   storingBy Location[]

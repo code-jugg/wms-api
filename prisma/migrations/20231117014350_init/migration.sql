@@ -3,7 +3,7 @@ CREATE TABLE "User" (
     "id" VARCHAR(12) NOT NULL,
     "name" VARCHAR(8) NOT NULL,
     "email" TEXT NOT NULL,
-    "password" VARCHAR(12) NOT NULL,
+    "password" TEXT NOT NULL,
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
 );
@@ -14,7 +14,7 @@ CREATE TABLE "Product" (
     "JAN" BIGINT NOT NULL,
     "code" CHAR(5) NOT NULL,
     "branch" CHAR(4) NOT NULL,
-    "name" VARCHAR(15) NOT NULL,
+    "name" VARCHAR(255) NOT NULL,
     "MFD" TIMESTAMP(3) NOT NULL,
     "BBE" TIMESTAMP(3) NOT NULL,
 

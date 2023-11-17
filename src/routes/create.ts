@@ -46,6 +46,10 @@ router.post('/product', async (req, res) => {
 });
 router.post('/location', async (req, res) => {
   try {
+    const location = await prisma.location.findMany();
+    if (location.length) {
+      return res.status(409).json({ message: 'すでに作成済みです' });
+    }
     for (let i = 1; i < 500; i++) {
       await prisma.location.create({
         data: {
