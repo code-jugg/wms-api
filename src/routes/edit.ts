@@ -20,7 +20,7 @@ router.get('/stored', async (req, res) => {
   }
 });
 //ロケーションを空きロケにする
-router.delete('/:location/clear', async (req, res) => {
+router.put('/:location/clear', async (req, res) => {
   try {
     const { location } = req.params;
     const current = await prisma.location.findUnique({
