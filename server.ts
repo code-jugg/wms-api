@@ -7,6 +7,7 @@ import create from './src/routes/create';
 import receiving from './src/routes/receiving';
 import shipping from './src/routes/shipping';
 import find from './src/routes/find';
+import edit from './src/routes/edit';
 import 'dotenv/config';
 const port = process.env.PORT || 8080;
 const app = express();
@@ -26,5 +27,7 @@ app.use('/api/receiving', receiving);
 app.use('/api/shipping', shipping);
 
 app.use('/api/find', find);
+
+app.use('/api/edit', edit);
 
 app.listen(port, () => console.log(`http://localhost:${port}`));

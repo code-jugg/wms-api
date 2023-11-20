@@ -30,3 +30,9 @@ export function userErrorHandler(err: unknown, res: Response) {
     return res.status(500).json({ message: err.message });
   }
 }
+
+export function defaultErrorHandler(err: unknown, res: Response) {
+  if (err instanceof Error) {
+    return res.status(500).json({ message: err.message });
+  }
+}

@@ -1,5 +1,6 @@
 import Router from 'express';
 import { PrismaClient } from '@prisma/client';
+import { defaultErrorHandler } from '../handlers/error';
 const router = Router();
 const prisma = new PrismaClient();
 
@@ -66,9 +67,7 @@ router.put('/:location', async (req, res) => {
     });
     return res.json({ message: `製品をPick${response.number}に格納しました` });
   } catch (err) {
-    if (err instanceof Error) {
-      return res.status(500).json({ message: err.message });
-    }
+    defaultErrorHandler(err, res);
   }
 });
 
